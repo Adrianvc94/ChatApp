@@ -1,0 +1,91 @@
+.sidebar_Container{
+    width: 450px;
+    overflow: auto;
+    max-width: 450px;
+    background-color: #1C1C1C;
+}
+
+.sidebar_nav{
+    flex-direction: row!important;
+    justify-content: space-evenly;
+    border: none!important;
+    border-bottom: solid 1px #2F2F2F!important;
+    margin: 10px 0!important;
+}
+
+.sidebar_content{
+    flex-direction: column!important;
+
+}
+
+.sidebar_nav__item:hover{
+    cursor: pointer;
+}
+
+.sidebar_nav__item a{
+    background-color: transparent!important;
+    border: none!important;
+    color: #727272!important;
+}
+
+.sidebar_nav__item a:hover{
+    color: #168FFF!important;
+}
+
+.sidebar_nav__item_Active a{
+    color: #168FFF!important;
+}
+
+.sidebar_nav__contactImg{
+    height: 40px;
+    width: 45px;
+}
+
+.tabContent{
+    height: 66vh;
+    max-height: 500px;
+    overflow: auto;
+    width: 100%;
+}
+
+.button{
+    width: 50%;
+    margin: 13px 25%;
+    border-radius: 10px!important;
+    background-color: #0a365e!important;
+    border: none!important;
+}
+
+.button:hover{
+    background-color: #085297!important;
+}
+
+.button:focus{
+    border: none!important;
+    box-shadow: none!important;
+}
+
+.yourID{
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.yourID p{ 
+    margin: 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+@media(max-width: 575px){
+    .sidebar_Container{
+        position: absolute;
+        max-width: none;
+        width: 100vw;
+        z-index: 9;
+        overflow: auto;
+        max-height: 520px;
+    }
+}

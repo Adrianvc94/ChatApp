@@ -1,0 +1,35 @@
+.checkBoxForm div{
+    width: 100px;
+    font-size: 1.2rem;
+}
+
+.checkBoxForm button{
+    width: 120px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px!important;
+    background-color: #0a365e!important;
+    border: none!important;
+}
+
+.checkBoxForm button:hover{
+    background-color: #085297!important;
+}
+
+.checkBoxForm button:focus{
+    border: none!important;
+    box-shadow: none!important;
+}
+
+.checkBoxForm span{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: maroon;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 1.2rem;
+}

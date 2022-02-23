@@ -1,0 +1,10 @@
+.items{
+    background-color: transparent!important;
+    color: white!important;
+    border: solid 1px #2F2F2F!important;
+}
+
+.itemActive{
+    border-left: solid 4px #168FFF!important;
+}
+

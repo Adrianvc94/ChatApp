@@ -1,0 +1,22 @@
+.title{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btnSubmit{
+    width: 120px;
+    display: block;
+    margin-top: 15px;
+    border-radius: 10px!important;
+    background-color: #0a365e!important;
+    border: none!important;
+}
+
+.btnSubmit:hover{
+    background-color: #085297!important;
+}
+
+.btnSubmit:focus{
+    border: none!important;
+    box-shadow: none!important;
+}
