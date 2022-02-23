@@ -11,7 +11,7 @@ export const SocketProvider = ({ children, id }) => {
   const [socket, setSocket] = useState();
 
   useEffect(() => {
-    const newSocket = io("http://localhost:5000", { query: { id } });
+    const newSocket = io("https://chat-app-server-av.herokuapp.com/", { query: { id } });
     setSocket(newSocket);
 
     return () => newSocket.close();

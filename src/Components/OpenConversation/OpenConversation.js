@@ -14,15 +14,21 @@ const OpenConversation = () => {
 
   const { sendMessage, selectedConversation } = useConversations();
 
+  const send = () => {
+    if(text !== "" && text !== " "){
+      sendMessage(
+        selectedConversation.recipients.map((recipient) => recipient.id),
+        text
+      );
+    }
+    
+    setText("");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    sendMessage(
-      selectedConversation.recipients.map((recipient) => recipient.id),
-      text
-    );
-
-    setText("");
+    send();
   };
 
   return (
@@ -45,7 +51,9 @@ const OpenConversation = () => {
               >
                 <div
                   className={`rounded px-2 py-1 ${
-                    message.fromMe ? `${Classes.fromMe_message} text-white` : `${Classes.fromOther_message} borde`
+                    message.fromMe
+                      ? `${Classes.fromMe_message} text-white`
+                      : `${Classes.fromOther_message} borde`
                   }`}
                   style={{ wordBreak: "break-word" }}
                 >
@@ -72,20 +80,23 @@ const OpenConversation = () => {
       </div>
 
       <Form className={`${Classes.form}`} onSubmit={handleSubmit}>
-        <Form.Group >
+        <Form.Group>
           <InputGroup className={`${Classes.inputGroup}`}>
-            <Form.Control 
-              as="textarea"
-              required
+            <Form.Control
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Type here"
               className={`${Classes.inputText}`}
+              onKeyPress={(event) => {
+                event.key === "Enter" && send();
+              }}
             />
-            <Button type="submit" 
-            className={`${Classes.buttonSend}`} id="button-addon2">
-     
-              <MdSend className={`${Classes.sendIcon}`}/>
+            <Button
+              type="submit"
+              className={`${Classes.buttonSend}`}
+              id="button-addon2"
+            >
+              <MdSend className={`${Classes.sendIcon}`} />
             </Button>
           </InputGroup>
         </Form.Group>
