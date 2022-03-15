@@ -48,9 +48,16 @@
     width: 100%;
 }
 
+.button_container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 .button{
-    width: 50%;
-    margin: 13px 25%;
+    /* width: 50%; */
+    /* margin: 13px 25%; */
+    padding: 15px!important;
     border-radius: 10px!important;
     background-color: #0a365e!important;
     border: none!important;
@@ -64,6 +71,14 @@
     border: none!important;
     box-shadow: none!important;
 }
+
+.btnlogoutImg{
+    height: 23px;
+    width: 23px;
+    margin-left: 3px;
+}
+
+
 
 .yourID{
     color: white;

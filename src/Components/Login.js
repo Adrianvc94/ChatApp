@@ -1,19 +1,25 @@
 import React, { useRef } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { v4 as uuidV4 } from "uuid";
 
-const Login = ({ onIdSubmit }) => {
+const Login = ({ onIdSubmit, setIsLoggedIn }) => {
   const idRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setLoginState();
     onIdSubmit(idRef.current.value);
   };
 
   const createNewId = () => {
-      onIdSubmit(uuidV4());
+      const id = Math.floor(Math.random() * (1000 - 1)) + 1;
+      setLoginState();
+      onIdSubmit(id);
   }
+
+  const setLoginState = () => {
+    localStorage.setItem("isLoggedIn", "1")
+    setIsLoggedIn("1");
+}
 
   return (
     <Container
@@ -22,13 +28,13 @@ const Login = ({ onIdSubmit }) => {
     >
       <Form onSubmit={handleSubmit} className="w-100">
         <Form.Group>
-          <Form.Label>Enter Your Id</Form.Label>
+          <Form.Label style={{ color: "white" }}>Enter an id</Form.Label>
           <Form.Control type="text" ref={idRef} required />
         </Form.Group>
         <Button type="submit" className="m-2">
           Login
         </Button>
-        <Button onClick={createNewId} variant="secondary">Create a new Id</Button>
+        <Button onClick={createNewId} variant="secondary">Create a random Id</Button>
       </Form>
     </Container>
   );

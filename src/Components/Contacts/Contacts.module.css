@@ -2,4 +2,36 @@
     background-color: transparent!important;
     color: white!important;
     border: solid 1px #2F2F2F!important;
+    display: flex!important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.deleteImg{
+    height: 30px;
+    width: 35px;
+}
+.deleteImg:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.btnSubmit{
+    margin-right: 10px;
+    width: 120px;
+    display: block;
+    margin-top: 15px;
+    border-radius: 10px!important;
+    background-color: #0a365e!important;
+    border: none!important;
+}
+
+.btnSubmit:hover{
+    background-color: #085297!important;
+}
+
+.btnSubmit:focus{
+    border: none!important;
+    box-shadow: none!important;
 }
