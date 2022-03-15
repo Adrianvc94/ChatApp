@@ -8,8 +8,9 @@ import { useState } from "react";
 
 function App() {
   const [id, setId] = useLocalStorage("id");
-  const [isLoggedIn, setIsLoggedIn] = useState("0");
+  const [isLoggedIn, setIsLoggedIn] = useState("1");
 
+  localStorage.setItem("isLoggedIn", "1");
   let isLoggedInLocalStorage = localStorage.getItem("isLoggedIn");
 
   const dashboard = (
@@ -22,7 +23,7 @@ function App() {
     </SocketProvider>
   );
   
-  return isLoggedIn === "1" || isLoggedInLocalStorage ? dashboard : <Login onIdSubmit={setId} setIsLoggedIn={setIsLoggedIn}/>;
+  return isLoggedIn === "1" && isLoggedInLocalStorage === "1" && id ? dashboard : <Login onIdSubmit={setId} setIsLoggedIn={setIsLoggedIn}/>;
 
 }
 
